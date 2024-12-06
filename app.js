@@ -1,3 +1,6 @@
+import React from "react"
+import ReactDOM from "react-dom/client"
+
 
 //Work flow of my code used in the HTML
 /*
