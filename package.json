@@ -1,7 +1,7 @@
 {
   "name": "namaste-react",
   "version": "1.0.0",
-  "description": "This is the practise codes of reacr.js which is I'm learning in the course.",
+  "description": "This is the practise codes of react.js which is I'm learning in the course.",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
@@ -22,7 +22,6 @@
   "devDependencies": {
     "cssnano": "^7.0.6",
     "parcel": "^2.13.2",
-    "postcss": "^8.4.49",
     "process": "^0.11.10"
   }
 }
