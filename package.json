@@ -15,6 +15,8 @@
   "author": "Priyanshu Singh",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-react": "^7.26.3",
     "node-module": "^1.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
