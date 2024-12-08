@@ -37,27 +37,50 @@ const Header = () => {
   );
 };
 
-const RestroCard = () => {
+const RestroCard = (props) => {
+  console.log(props)
   return (
-    <div className="res-card"></div>
-  )
-}
+    <div className="res-card">
+      <img
+        className="res-logo"
+        alt="res-logo"
+        src="https://dineout-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/v1702303342/77abb9d0949e33887be89fc4aa802b7a.jpg"
+      ></img>
+      <h3>{props.resName}</h3>
+      <h4>{props.cuisine}</h4>
+      <h4>{props.rating}</h4>
+      <h4>{props.deliveryTime}</h4>
+    </div>
+  );
+};
 
 const Body = () => {
   return (
     <div className="body">
       <div className="search">SEARCH</div>
       <div className="res-container">
-
+        <RestroCard
+          resName="Holy Chopsticks"
+          cuisine="Biryani, North Indian, Asian"
+          rating="4.3"
+          deliveryTime="38 mins"
+        />
+        <RestroCard 
+        resName="KFC"
+        cuisine="Chicken, Wings, Puffs"
+        rating="4.4"
+        deliveryTime="10mins"
+        />
       </div>
     </div>
-  )
-}
+  );
+};
 
 const AppLayout = () => {
   return (
     <div className="app">
       <Header />
+      <Body />
     </div>
   );
 };
