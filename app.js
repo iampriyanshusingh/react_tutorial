@@ -1,6 +1,8 @@
 // import Header from "./components/Body";
 // import Body from "./components/Body";
 
+import { useState } from "react";
+
 const Header = () => {
   return (
     <div className="header">
@@ -23,7 +25,7 @@ const Header = () => {
   );
 };
 
-const resList = [
+const [resList, setResList] = useState([
   {
     info: {
       id: "754960",
@@ -1220,7 +1222,7 @@ const resList = [
       type: "WEBLINK",
     },
   },
-];
+]);
 
 const RestroCard = (props) => {
   const { resData } = props;
@@ -1256,7 +1258,19 @@ const RestroCard = (props) => {
 const Body = () => {
   return (
     <div className="body">
-      <div className="search">SEARCH</div>
+      <div className="filter">
+        <button
+          className="filter-btn"
+          onClick={() => {
+            const filteredList = resList.filter(
+              (res) => res.info.avgRating > 4
+            );
+            setResList(filteredList);
+          }}
+        >
+          Top Rated Restaurant
+        </button>
+      </div>
       <div className="res-container">
         {resList.map((restaurant) => (
           <RestroCard key={restaurant.info.id} resData={restaurant} />
