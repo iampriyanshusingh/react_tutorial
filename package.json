@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "namaste-react",
   "version": "1.0.0",
   "description": "This is the practise codes of react.js which is I'm learning in the course.",
