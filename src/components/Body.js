@@ -26,7 +26,7 @@ const Body = () => {
           onClick={() => {
             // Filter restaurants with avgRating > 4
             const filteredList = listOfRestaurant.filter(
-              (res) => res.info.avgRating > 4
+              (res) => res.info.avgRating > 4.5
             );
             setListOfRestaurant(filteredList);
           }}

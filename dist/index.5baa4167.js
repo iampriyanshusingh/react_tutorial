@@ -18895,7 +18895,7 @@ const Body = ()=>{
                     className: "filter-btn",
                     onClick: ()=>{
                         // Filter restaurants with avgRating > 4
-                        const filteredList = listOfRestaurant.filter((res)=>res.info.avgRating > 4);
+                        const filteredList = listOfRestaurant.filter((res)=>res.info.avgRating > 4.5);
                         setListOfRestaurant(filteredList);
                     },
                     children: "Top Rated Restaurant"
