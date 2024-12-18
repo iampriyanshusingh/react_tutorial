@@ -75,3 +75,17 @@
     margin: 10px;
     cursor: pointer;
 }
+
+.filter{
+    display: flex;
+    flex-wrap: wrap;
+}
+.search-btn{
+    margin: 2px;
+}
+
+.filter-btn{
+    height: 20px;
+    width: 185px;
+    margin: 10px;
+}

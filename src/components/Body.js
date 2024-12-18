@@ -5,6 +5,8 @@ import Shimmer from "./shimmer";
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
 
+  const [searchText, setSearchText] = useState("");
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -15,7 +17,7 @@ const Body = () => {
     );
 
     const json = await data.json();
-    
+
     console.log(json);
     //optional chaining ?.[]?.[]
     setListOfRestaurant(
@@ -34,12 +36,28 @@ const Body = () => {
   ) : (
     <div className="body">
       <div className="filter">
+        <div className="search">
+          <input type="text" className="search-box" value={searchText} onChange={(e)=>
+          setSearchText(e.target.value)
+          }>
+          </input>
+          <button className="search-btn" onClick={()=>{
+            console.log(searchText);
+
+            const filteredRestaurant = listOfRestaurant.filter((res)=>{
+              res.data.cards[1].name.toLowerCase().includes(searchText.toLowerCase());
+            });
+
+            setListOfRestaurant(filteredRestaurant);
+
+          }}>Search</button>
+        </div>
         <button
           className="filter-btn"
           onClick={() => {
             // Filter restaurants with avgRating > 4
             const filteredList = listOfRestaurant.filter(
-              (res) => res.info.avgRating > 4.5
+              (res) => res.info.avgRating > 4
             );
             setListOfRestaurant(filteredList);
           }}
