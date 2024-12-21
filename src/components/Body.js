@@ -20,6 +20,10 @@ const Body = () => {
 
     console.log(json);
     //optional chaining ?.[]?.[]
+
+    console.log(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
     setListOfRestaurant(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
@@ -37,20 +41,28 @@ const Body = () => {
     <div className="body">
       <div className="filter">
         <div className="search">
-          <input type="text" className="search-box" value={searchText} onChange={(e)=>
-          setSearchText(e.target.value)
-          }>
-          </input>
-          <button className="search-btn" onClick={()=>{
-            console.log(searchText);
+          <input
+            type="text"
+            className="search-box"
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+          ></input>
+          <button
+            className="search-btn"
+            onClick={() => {
+              console.log(searchText);
 
-            const filteredRestaurant = listOfRestaurant.filter((res)=>{
-              res.data.cards[1].name.toLowerCase().includes(searchText.toLowerCase());
-            });
+              const filteredRestaurant = listOfRestaurant.filter((res) => {
+                res.data.cards[1].name
+                  .toLowerCase()
+                  .includes(searchText.toLowerCase());
+              });
 
-            setListOfRestaurant(filteredRestaurant);
-
-          }}>Search</button>
+              setListOfRestaurant(filteredRestaurant);
+            }}
+          >
+            Search
+          </button>
         </div>
         <button
           className="filter-btn"
@@ -67,7 +79,7 @@ const Body = () => {
       </div>
       <div className="res-container">
         {listOfRestaurant.map((restaurant) => (
-          <RestroCard key={restaurant.info.id} resData={restaurant} />
+          <RestroCard key={restaurant.data.cards.card.card.imageGridCards.infoWithStyle.info.id} resData={restaurant} />
         ))}
       </div>
     </div>
